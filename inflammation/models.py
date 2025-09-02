@@ -57,6 +57,9 @@ def patient_normalise(data):
     Args:
         data (2D array): inflammation data array
     """
+    # First check if any negative values are supplied
+    if np.any(data < 0):
+        raise ValueError("Inflammation values should not be negative.")
     max = np.max(data, axis=1)
     with np.errstate(invalid='ignore', divide='ignore'):
         normalised = data / max[:, np.newaxis]
