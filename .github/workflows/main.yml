@@ -11,7 +11,7 @@ jobs:
     # Matrix definition of accepted python versions and OS's
     strategy:
       matrix:
-        os: ["ubuntu-latest", "macros-latest", "windows-latest"]
+        os: ["ubuntu-latest", "macos-latest", "windows-latest"]
         python-version: ["3.11", "3.12"]
 
     # Specify the OS matrix to run tests on

@@ -46,3 +46,13 @@ def daily_min(data):
     :returns: An array of minimum values for each day
     """
     return np.min(data, axis=0)
+
+
+def patient_normalise(data):
+    """Normalise patient data from 2D inflammation data array.
+
+    Args:
+        data (2D array): inflammation data array
+    """
+    max = np.max(data, axis=0)
+    return data / max[:, np.newaxis]
